@@ -1,0 +1,4077 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0F0F0F">
+
+  <!-- SEO -->
+  <title>APEX | Премиальный фитнес-клуб нового поколения</title>
+  <meta name="description" content="APEX — не просто клуб. Это среда, где трансформируются лучшие. Персональный подход, архитектурное пространство, методология мирового уровня.">
+  <meta name="keywords" content="фитнес клуб премиум, тренажёрный зал Москва, персональные тренировки, APEX фитнес">
+  <link rel="canonical" href="https://apex-fitness.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="APEX | Премиальный фитнес-клуб">
+  <meta property="og:description" content="Среда, где трансформируются лучшие. Методология мирового уровня.">
+  <meta property="og:url" content="https://apex-fitness.com">
+  <meta property="og:image" content="https://apex-fitness.com/og-image.jpg">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="APEX | Премиальный фитнес-клуб">
+  <meta name="twitter:description" content="Среда, где трансформируются лучшие.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "APEX Fitness Club",
+    "description": "Премиальный фитнес-клуб нового поколения",
+    "url": "https://apex-fitness.com",
+    "telephone": "+7 (495) 000-00-00",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Новый Арбат, 10",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Su 06:00-24:00",
+    "priceRange": "₽₽₽₽"
+  }
+  </script>
+
+  <style>
+    /* =============================================
+       DESIGN SYSTEM — APEX FITNESS
+       Architect: Premium Digital Team
+    ============================================= */
+
+    :root {
+      /* COLORS */
+      --c-void: #080808;
+      --c-graphite: #0F0F0F;
+      --c-graphite-2: #161616;
+      --c-graphite-3: #1E1E1E;
+      --c-graphite-4: #252525;
+      --c-gray-1: #2E2E2E;
+      --c-gray-2: #404040;
+      --c-gray-3: #6B6B6B;
+      --c-gray-4: #9A9A9A;
+      --c-gray-5: #C8C8C8;
+      --c-white: #F5F5F5;
+      --c-pure: #FFFFFF;
+      --c-lime: #B8FF35;
+      --c-lime-dim: #8FCC22;
+      --c-lime-glow: rgba(184, 255, 53, 0.15);
+      --c-lime-ghost: rgba(184, 255, 53, 0.06);
+
+      /* TYPOGRAPHY */
+      --f-display: 'Syne', sans-serif;
+      --f-body: 'Inter', sans-serif;
+
+      /* SCALE */
+      --t-hero: clamp(3rem, 9vw, 8rem);
+      --t-display: clamp(2.2rem, 5vw, 4.5rem);
+      --t-h2: clamp(1.8rem, 3.5vw, 3rem);
+      --t-h3: clamp(1.3rem, 2vw, 1.8rem);
+      --t-large: 1.2rem;
+      --t-base: 1rem;
+      --t-small: 0.875rem;
+      --t-xs: 0.75rem;
+
+      /* SPACING */
+      --s-section: clamp(5rem, 10vw, 10rem);
+      --s-container: clamp(1.5rem, 5vw, 6rem);
+
+      /* MOTION */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+      --dur-fast: 0.25s;
+      --dur-mid: 0.5s;
+      --dur-slow: 0.9s;
+      --dur-xl: 1.4s;
+
+      /* BORDER */
+      --border: 1px solid rgba(255,255,255,0.07);
+      --border-lime: 1px solid rgba(184, 255, 53, 0.3);
+
+      /* RADIUS */
+      --r-sm: 4px;
+      --r-md: 12px;
+      --r-lg: 24px;
+      --r-xl: 40px;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--f-body);
+      background: var(--c-graphite);
+      color: var(--c-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    /* =============================================
+       PRELOADER
+    ============================================= */
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--c-void);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      transition: opacity 0.8s var(--ease-out), visibility 0.8s;
+    }
+
+    .preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader__wordmark {
+      font-family: var(--f-display);
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      color: var(--c-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preloader__wordmark::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--c-void);
+      transform: translateX(0);
+      animation: wordReveal 1.2s var(--ease-out) 0.3s forwards;
+    }
+
+    @keyframes wordReveal {
+      to { transform: translateX(110%); }
+    }
+
+    .preloader__bar-wrap {
+      width: 200px;
+      height: 1px;
+      background: var(--c-gray-1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preloader__bar {
+      position: absolute;
+      inset: 0;
+      background: var(--c-lime);
+      transform: translateX(-100%);
+      animation: barLoad 1.8s var(--ease-out) 0.5s forwards;
+    }
+
+    @keyframes barLoad {
+      to { transform: translateX(0); }
+    }
+
+    .preloader__counter {
+      font-family: var(--f-body);
+      font-size: var(--t-xs);
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--c-gray-3);
+      animation: countUp 1.8s var(--ease-out) 0.5s both;
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* =============================================
+       NOISE TEXTURE OVERLAY
+    ============================================= */
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem var(--s-container);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s var(--ease-out), backdrop-filter 0.4s, border-color 0.4s;
+    }
+
+    .nav.scrolled {
+      background: rgba(8, 8, 8, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: var(--border);
+    }
+
+    .nav__logo {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: var(--c-white);
+      position: relative;
+    }
+
+    .nav__logo span {
+      color: var(--c-lime);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: var(--t-small);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--c-gray-4);
+      transition: color var(--dur-fast) ease;
+      position: relative;
+    }
+
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--c-lime);
+      transition: width var(--dur-mid) var(--ease-out);
+    }
+
+    .nav__links a:hover {
+      color: var(--c-white);
+    }
+
+    .nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nav__cta {
+      font-size: var(--t-small);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--c-void);
+      background: var(--c-lime);
+      padding: 0.65rem 1.5rem;
+      border-radius: var(--r-sm);
+      transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast);
+    }
+
+    .nav__cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(184, 255, 53, 0.35);
+    }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      z-index: 101;
+    }
+
+    .nav__hamburger span {
+      display: block;
+      height: 1px;
+      background: var(--c-white);
+      transition: transform var(--dur-mid) var(--ease-out), opacity var(--dur-mid);
+    }
+
+    .nav__hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav__hamburger.active span:nth-child(2) { opacity: 0; }
+    .nav__hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .nav__mobile {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: var(--c-void);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--dur-mid) var(--ease-out), visibility var(--dur-mid);
+    }
+
+    .nav__mobile.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav__mobile a {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--c-gray-3);
+      transition: color var(--dur-fast);
+    }
+
+    .nav__mobile a:hover {
+      color: var(--c-lime);
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* Animated gradient mesh background */
+    .hero__mesh {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(184,255,53,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%),
+        var(--c-void);
+      animation: meshPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes meshPulse {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    /* Grid lines decoration */
+    .hero__grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 var(--s-container) 6rem;
+      padding-top: 8rem;
+      max-width: 100%;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s var(--ease-out) 2.2s forwards;
+    }
+
+    .hero__eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--c-lime);
+    }
+
+    .hero__headline {
+      font-family: var(--f-display);
+      font-size: var(--t-hero);
+      font-weight: 800;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      max-width: 900px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s var(--ease-out) 2.4s forwards;
+    }
+
+    .hero__headline em {
+      font-style: normal;
+      color: var(--c-lime);
+    }
+
+    .hero__sub {
+      margin-top: 2.5rem;
+      font-size: var(--t-large);
+      font-weight: 300;
+      color: var(--c-gray-4);
+      max-width: 480px;
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s var(--ease-out) 2.7s forwards;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s var(--ease-out) 3s forwards;
+      flex-wrap: wrap;
+    }
+
+    .hero__bottom {
+      position: relative;
+      z-index: 2;
+      padding: 0 var(--s-container) 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: var(--border);
+      padding-top: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease 3.3s forwards;
+    }
+
+    .hero__stats {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .hero__stat-num {
+      font-family: var(--f-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--c-white);
+      display: block;
+    }
+
+    .hero__stat-label {
+      font-size: var(--t-xs);
+      letter-spacing: 0.1em;
+      color: var(--c-gray-3);
+      text-transform: uppercase;
+    }
+
+    .hero__scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--t-xs);
+      letter-spacing: 0.15em;
+      color: var(--c-gray-3);
+      text-transform: uppercase;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--c-gray-3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(0.7); transform-origin: top; }
+    }
+
+    /* Hero image composition */
+    .hero__visual {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 55%;
+      z-index: 1;
+    }
+
+    .hero__visual-inner {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hero__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      animation: heroImgReveal 1.5s var(--ease-out) 1.8s both;
+    }
+
+    @keyframes heroImgReveal {
+      from { transform: scale(1.15); opacity: 0; }
+      to { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Gradient mask on visual */
+    .hero__visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        to right,
+        var(--c-void) 0%,
+        rgba(8,8,8,0.7) 30%,
+        transparent 60%
+      );
+    }
+
+    /* Hero placeholder image using CSS */
+    .hero__img-placeholder {
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(184,255,53,0.05) 0%, transparent 50%),
+        linear-gradient(to bottom, #1a1a1a 0%, #0a0a0a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero__img-placeholder .human-silhouette {
+      width: 40%;
+      opacity: 0.15;
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--f-body);
+      font-size: var(--t-small);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 0.9rem 2rem;
+      border-radius: var(--r-sm);
+      transition:
+        transform var(--dur-fast) var(--ease-out),
+        box-shadow var(--dur-fast) ease,
+        background var(--dur-fast) ease,
+        color var(--dur-fast) ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--dur-fast);
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+    }
+
+    .btn--primary {
+      background: var(--c-lime);
+      color: var(--c-void);
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(184, 255, 53, 0.4);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--c-gray-5);
+      border: var(--border);
+    }
+
+    .btn--ghost:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--c-white);
+      transform: translateY(-1px);
+    }
+
+    .btn--outline-lime {
+      background: transparent;
+      color: var(--c-lime);
+      border: var(--border-lime);
+    }
+
+    .btn--outline-lime:hover {
+      background: var(--c-lime-ghost);
+      transform: translateY(-1px);
+    }
+
+    .btn svg {
+      transition: transform var(--dur-fast) var(--ease-out);
+    }
+
+    .btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* =============================================
+       SECTION UTILITY
+    ============================================= */
+
+    .section {
+      padding: var(--s-section) var(--s-container);
+    }
+
+    .section--dark {
+      background: var(--c-graphite-2);
+    }
+
+    .section--darker {
+      background: var(--c-void);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--c-lime);
+    }
+
+    .section-title {
+      font-family: var(--f-display);
+      font-size: var(--t-h2);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--c-white);
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--c-lime);
+    }
+
+    /* =============================================
+       REVEAL ANIMATION
+    ============================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal--left {
+      transform: translateX(-40px);
+    }
+
+    .reveal--left.visible {
+      transform: translateX(0);
+    }
+
+    .reveal--right {
+      transform: translateX(40px);
+    }
+
+    .reveal--right.visible {
+      transform: translateX(0);
+    }
+
+    .reveal--scale {
+      transform: scale(0.95);
+    }
+
+    .reveal--scale.visible {
+      transform: scale(1);
+    }
+
+    /* =============================================
+       ABOUT SECTION
+    ============================================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about__left {}
+
+    .about__desc {
+      margin-top: 2rem;
+      font-size: var(--t-large);
+      font-weight: 300;
+      color: var(--c-gray-4);
+      line-height: 1.75;
+    }
+
+    .about__desc strong {
+      color: var(--c-white);
+      font-weight: 400;
+    }
+
+    .about__meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 3rem;
+      border: var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+
+    .about__meta-item {
+      padding: 1.5rem;
+      background: var(--c-graphite-3);
+      transition: background var(--dur-fast);
+    }
+
+    .about__meta-item:hover {
+      background: var(--c-graphite-4);
+    }
+
+    .about__meta-num {
+      font-family: var(--f-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--c-white);
+      letter-spacing: -0.03em;
+    }
+
+    .about__meta-num span {
+      color: var(--c-lime);
+    }
+
+    .about__meta-label {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .about__right {
+      position: relative;
+    }
+
+    .about__img-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .about__img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: var(--border);
+      border-radius: var(--r-lg);
+      z-index: 2;
+    }
+
+    .about__img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1a1e1a 0%, #0c0e0c 50%, #111811 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+    }
+
+    .about__badge {
+      position: absolute;
+      bottom: 2rem;
+      right: -2rem;
+      background: var(--c-graphite-3);
+      border: var(--border);
+      border-radius: var(--r-md);
+      padding: 1.25rem 1.5rem;
+      z-index: 3;
+      backdrop-filter: blur(10px);
+    }
+
+    .about__badge-text {
+      font-family: var(--f-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-lime);
+    }
+
+    .about__badge-sub {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    /* =============================================
+       ADVANTAGES
+    ============================================= */
+
+    .advantages__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 4rem;
+      border: var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .advantage-card {
+      background: var(--c-graphite-2);
+      padding: 2.5rem;
+      position: relative;
+      transition: background var(--dur-mid) var(--ease-out);
+      overflow: hidden;
+    }
+
+    .advantage-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--c-lime);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--dur-mid) var(--ease-out);
+    }
+
+    .advantage-card:hover {
+      background: var(--c-graphite-3);
+    }
+
+    .advantage-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .advantage-card__icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--c-lime-ghost);
+      border: var(--border-lime);
+      border-radius: var(--r-sm);
+      margin-bottom: 1.5rem;
+      transition: background var(--dur-fast);
+    }
+
+    .advantage-card:hover .advantage-card__icon {
+      background: var(--c-lime-glow);
+    }
+
+    .advantage-card__icon svg {
+      color: var(--c-lime);
+    }
+
+    .advantage-card__title {
+      font-family: var(--f-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--c-white);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .advantage-card__text {
+      font-size: var(--t-small);
+      color: var(--c-gray-3);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       DIRECTIONS / PROGRAMS
+    ============================================= */
+
+    .programs__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .programs__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+
+    .program-card {
+      position: relative;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      border: var(--border);
+      transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid);
+      background: var(--c-graphite-3);
+    }
+
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .program-card--featured {
+      grid-row: span 2;
+    }
+
+    .program-card__inner {
+      padding: 2.5rem;
+      height: 100%;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .program-card--featured .program-card__inner {
+      min-height: 460px;
+    }
+
+    .program-card__accent {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, var(--c-lime-ghost) 100%);
+      pointer-events: none;
+    }
+
+    .program-card__tag {
+      display: inline-block;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      padding: 0.3rem 0.7rem;
+      border: var(--border-lime);
+      border-radius: var(--r-sm);
+      margin-bottom: 1.25rem;
+      align-self: flex-start;
+    }
+
+    .program-card__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--c-white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .program-card__meta {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      letter-spacing: 0.08em;
+    }
+
+    .program-card__arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      transition: gap var(--dur-fast);
+    }
+
+    .program-card:hover .program-card__arrow {
+      gap: 0.7rem;
+    }
+
+    /* =============================================
+       TRAINERS
+    ============================================= */
+
+    .trainers__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .trainer-card {
+      position: relative;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      border: var(--border);
+      background: var(--c-graphite-2);
+      transition: transform var(--dur-mid) var(--ease-out);
+    }
+
+    .trainer-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .trainer-card__photo {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .trainer-card__photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #1a1a1a 0%, #111 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trainer-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .trainer-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 1.25rem;
+    }
+
+    .trainer-card__name {
+      font-family: var(--f-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-white);
+      letter-spacing: -0.01em;
+    }
+
+    .trainer-card__role {
+      font-size: var(--t-xs);
+      color: var(--c-lime);
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    .trainer-card__body {
+      padding: 1.25rem;
+    }
+
+    .trainer-card__exp {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      line-height: 1.6;
+    }
+
+    /* Trainer placeholder avatar */
+    .trainer-avatar {
+      width: 80px;
+      opacity: 0.1;
+    }
+
+    /* =============================================
+       PRICING
+    ============================================= */
+
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .price-card {
+      border: var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--c-graphite-2);
+      position: relative;
+      transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid);
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .price-card--featured {
+      background: var(--c-graphite-3);
+      border-color: rgba(184, 255, 53, 0.2);
+      box-shadow: 0 0 60px rgba(184, 255, 53, 0.07);
+    }
+
+    .price-card--featured:hover {
+      box-shadow: 0 20px 60px rgba(184, 255, 53, 0.15);
+    }
+
+    .price-card__badge {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      font-size: var(--t-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-void);
+      background: var(--c-lime);
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--r-sm);
+    }
+
+    .price-card__head {
+      padding: 2rem 2rem 0;
+    }
+
+    .price-card__name {
+      font-family: var(--f-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-gray-3);
+    }
+
+    .price-card--featured .price-card__name {
+      color: var(--c-lime);
+    }
+
+    .price-card__price {
+      font-family: var(--f-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--c-white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-top: 1rem;
+    }
+
+    .price-card__price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--c-gray-3);
+      letter-spacing: 0;
+    }
+
+    .price-card__period {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      margin-top: 0.25rem;
+    }
+
+    .price-card__features {
+      padding: 2rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .price-card__feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: var(--t-small);
+      color: var(--c-gray-4);
+    }
+
+    .price-card__feature::before {
+      content: '';
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--c-lime-ghost);
+      border: var(--border-lime);
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .price-card__feature.active {
+      color: var(--c-gray-5);
+    }
+
+    .price-card__feature.active::before {
+      background: var(--c-lime);
+      border-color: var(--c-lime);
+    }
+
+    .price-card__footer {
+      padding: 0 2rem 2rem;
+    }
+
+    .price-card__divider {
+      border: none;
+      border-top: var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    /* =============================================
+       SCHEDULE
+    ============================================= */
+
+    .schedule__tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .schedule__tab {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-gray-3);
+      padding: 0.5rem 1.25rem;
+      border: var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all var(--dur-fast) ease;
+      background: transparent;
+    }
+
+    .schedule__tab.active,
+    .schedule__tab:hover {
+      background: var(--c-lime);
+      color: var(--c-void);
+      border-color: var(--c-lime);
+    }
+
+    .schedule__table {
+      border: var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+
+    .schedule__row {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr 1fr;
+      border-bottom: var(--border);
+      transition: background var(--dur-fast);
+    }
+
+    .schedule__row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule__row:hover {
+      background: var(--c-graphite-3);
+    }
+
+    .schedule__cell {
+      padding: 1.1rem 1.25rem;
+      font-size: var(--t-small);
+      color: var(--c-gray-4);
+      border-right: var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .schedule__cell:last-child {
+      border-right: none;
+    }
+
+    .schedule__time {
+      font-family: var(--f-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--c-lime);
+    }
+
+    .schedule__class {
+      font-weight: 500;
+      color: var(--c-white);
+    }
+
+    .schedule__tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      padding: 0.2rem 0.5rem;
+      border: var(--border-lime);
+      border-radius: 3px;
+    }
+
+    /* =============================================
+       TESTIMONIALS
+    ============================================= */
+
+    .testimonials__slider {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: var(--c-graphite-2);
+      border: var(--border);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      position: relative;
+      transition: transform var(--dur-mid) var(--ease-out), border-color var(--dur-mid);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(184,255,53,0.15);
+    }
+
+    .testimonial-card__quote {
+      font-size: 2rem;
+      color: var(--c-lime);
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      opacity: 0.5;
+    }
+
+    .testimonial-card__text {
+      font-size: var(--t-base);
+      color: var(--c-gray-4);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: var(--border);
+    }
+
+    .testimonial-card__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--c-graphite-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--c-lime);
+      flex-shrink: 0;
+    }
+
+    .testimonial-card__name {
+      font-weight: 500;
+      font-size: var(--t-small);
+      color: var(--c-white);
+    }
+
+    .testimonial-card__meta {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+    }
+
+    .testimonial-card__stars {
+      color: var(--c-lime);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      margin-left: auto;
+    }
+
+    /* =============================================
+       GALLERY
+    ============================================= */
+
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 240px);
+      gap: 0.75rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      position: relative;
+      border: var(--border);
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .gallery-item:nth-child(2) { grid-column: span 4; }
+    .gallery-item:nth-child(3) { grid-column: span 3; }
+    .gallery-item:nth-child(4) { grid-column: span 3; }
+    .gallery-item:nth-child(5) { grid-column: span 4; }
+
+    .gallery-item__bg {
+      width: 100%;
+      height: 100%;
+      transition: transform var(--dur-slow) var(--ease-out);
+    }
+
+    .gallery-item:hover .gallery-item__bg {
+      transform: scale(1.05);
+    }
+
+    .gallery-item__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: opacity var(--dur-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:hover .gallery-item__overlay {
+      opacity: 1;
+    }
+
+    .gallery-item__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(184,255,53,0.2);
+      border: var(--border-lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-lime);
+    }
+
+    /* Gallery placeholder colors */
+    .gallery-placeholder-1 { background: linear-gradient(135deg, #1a1a1a, #111); }
+    .gallery-placeholder-2 { background: linear-gradient(135deg, #111811, #0d0d0d); }
+    .gallery-placeholder-3 { background: linear-gradient(135deg, #151515, #0f0f0f); }
+    .gallery-placeholder-4 { background: linear-gradient(135deg, #181818, #0e0e0e); }
+    .gallery-placeholder-5 { background: linear-gradient(135deg, #121212, #101010); }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+
+    .faq__list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item__trigger {
+      width: 100%;
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      cursor: pointer;
+      background: var(--c-graphite-2);
+      transition: background var(--dur-fast);
+      gap: 1rem;
+    }
+
+    .faq-item__trigger:hover {
+      background: var(--c-graphite-3);
+    }
+
+    .faq-item__question {
+      font-size: var(--t-base);
+      font-weight: 500;
+      color: var(--c-white);
+      line-height: 1.4;
+    }
+
+    .faq-item__icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--c-graphite-3);
+      border: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-lime);
+      transition: transform var(--dur-mid) var(--ease-out), background var(--dur-fast);
+    }
+
+    .faq-item.open .faq-item__icon {
+      transform: rotate(45deg);
+      background: var(--c-lime-ghost);
+      border-color: var(--c-lime);
+    }
+
+    .faq-item__body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur-mid) var(--ease-out), opacity var(--dur-mid);
+      opacity: 0;
+    }
+
+    .faq-item.open .faq-item__body {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .faq-item__answer {
+      padding: 0 2rem 1.75rem;
+      font-size: var(--t-small);
+      color: var(--c-gray-3);
+      line-height: 1.8;
+      background: var(--c-graphite-2);
+    }
+
+    /* =============================================
+       CONTACT / FORM
+    ============================================= */
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .contact__info-title {
+      font-family: var(--f-display);
+      font-size: var(--t-h2);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-top: 1.5rem;
+    }
+
+    .contact__info-title em {
+      font-style: normal;
+      color: var(--c-lime);
+    }
+
+    .contact__desc {
+      margin-top: 1.5rem;
+      font-size: var(--t-base);
+      color: var(--c-gray-3);
+      line-height: 1.75;
+    }
+
+    .contact__details {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact__detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact__detail-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r-sm);
+      background: var(--c-lime-ghost);
+      border: var(--border-lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-lime);
+    }
+
+    .contact__detail-label {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact__detail-value {
+      font-size: var(--t-base);
+      font-weight: 500;
+      color: var(--c-white);
+    }
+
+    /* FORM */
+    .form {
+      background: var(--c-graphite-2);
+      border: var(--border);
+      border-radius: var(--r-xl);
+      padding: 3rem;
+    }
+
+    .form__title {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--c-white);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .form__sub {
+      font-size: var(--t-small);
+      color: var(--c-gray-3);
+      margin-bottom: 2rem;
+    }
+
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form__label {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-gray-3);
+    }
+
+    .form__input,
+    .form__select {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      background: var(--c-graphite-3);
+      border: var(--border);
+      border-radius: var(--r-sm);
+      color: var(--c-white);
+      font-family: var(--f-body);
+      font-size: var(--t-base);
+      transition: border-color var(--dur-fast), box-shadow var(--dur-fast), background var(--dur-fast);
+      appearance: none;
+    }
+
+    .form__input::placeholder {
+      color: var(--c-gray-2);
+    }
+
+    .form__input:focus,
+    .form__select:focus {
+      outline: none;
+      border-color: var(--c-lime);
+      background: var(--c-graphite-4);
+      box-shadow: 0 0 0 3px rgba(184,255,53,0.1);
+    }
+
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form__privacy {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      margin-top: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .form__privacy a {
+      color: var(--c-lime);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .form__success {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .form__success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--c-lime-glow);
+      border: var(--border-lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--c-lime);
+      font-size: 1.5rem;
+    }
+
+    .form__success h3 {
+      font-family: var(--f-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--c-white);
+    }
+
+    .form__success p {
+      font-size: var(--t-small);
+      color: var(--c-gray-3);
+      margin-top: 0.5rem;
+    }
+
+    /* =============================================
+       TRUST STRIP
+    ============================================= */
+
+    .trust-strip {
+      padding: 3rem var(--s-container);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--c-gray-3);
+      font-size: var(--t-small);
+    }
+
+    .trust-item svg {
+      color: var(--c-lime);
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       CTA BANNER
+    ============================================= */
+
+    .cta-banner {
+      position: relative;
+      margin: 0 var(--s-container);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      padding: 5rem 4rem;
+      background: var(--c-graphite-3);
+      border: var(--border);
+      text-align: center;
+    }
+
+    .cta-banner__glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,255,53,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-banner__grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .cta-banner__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner__eyebrow {
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-banner__title {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--c-white);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-banner__sub {
+      font-size: var(--t-large);
+      color: var(--c-gray-3);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+
+    .footer {
+      padding: 5rem var(--s-container) 2.5rem;
+      border-top: var(--border);
+      background: var(--c-void);
+    }
+
+    .footer__main {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer__brand {}
+
+    .footer__logo {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: var(--c-white);
+    }
+
+    .footer__logo span { color: var(--c-lime); }
+
+    .footer__tagline {
+      margin-top: 1rem;
+      font-size: var(--t-small);
+      color: var(--c-gray-3);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    .footer__social a {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r-sm);
+      background: var(--c-graphite-2);
+      border: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-gray-3);
+      transition: all var(--dur-fast);
+    }
+
+    .footer__social a:hover {
+      background: var(--c-lime-ghost);
+      border-color: rgba(184,255,53,0.2);
+      color: var(--c-lime);
+    }
+
+    .footer__col-title {
+      font-size: var(--t-xs);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-gray-3);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer__links a {
+      font-size: var(--t-small);
+      color: var(--c-gray-4);
+      transition: color var(--dur-fast);
+    }
+
+    .footer__links a:hover {
+      color: var(--c-white);
+    }
+
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2.5rem;
+      border-top: var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copy {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer__legal a {
+      font-size: var(--t-xs);
+      color: var(--c-gray-3);
+      transition: color var(--dur-fast);
+    }
+
+    .footer__legal a:hover {
+      color: var(--c-white);
+    }
+
+    /* =============================================
+       ANIMATE HELPERS
+    ============================================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(var(--from-y, 30px));
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* =============================================
+       COUNTER ANIM
+    ============================================= */
+
+    .count-up {
+      display: inline-block;
+    }
+
+    /* =============================================
+       MARQUEE
+    ============================================= */
+
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: var(--border);
+      border-bottom: var(--border);
+      padding: 1.25rem 0;
+      background: var(--c-graphite-2);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--f-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-gray-2);
+      flex-shrink: 0;
+    }
+
+    .marquee-item__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c-lime);
+      flex-shrink: 0;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+
+    @media (max-width: 1100px) {
+      .trainers__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__main {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav__links,
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__hamburger {
+        display: flex;
+      }
+
+      .hero__visual {
+        display: none;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about__badge {
+        right: 0;
+      }
+
+      .advantages__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .programs__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-card--featured {
+        grid-row: span 1;
+      }
+
+      .pricing__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .testimonials__slider {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(3),
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 200px;
+      }
+
+      .schedule__row {
+        grid-template-columns: 80px 1fr;
+      }
+
+      .schedule__cell:nth-child(3),
+      .schedule__cell:nth-child(4) {
+        display: none;
+      }
+
+      .cta-banner {
+        margin: 0 1rem;
+        padding: 3rem 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --s-container: 1.25rem;
+      }
+
+      .advantages__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__stats {
+        gap: 1.5rem;
+      }
+
+      .about__meta {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer__main {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .form__row {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-strip {
+        gap: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Shimmer for image placeholders */
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
+      animation: shimmer 2.5s ease-in-out infinite;
+      transform: translateX(-100%);
+    }
+
+    @keyframes shimmer {
+      to { transform: translateX(100%); }
+    }
+
+    /* Lime accent line */
+    .lime-line {
+      width: 40px;
+      height: 2px;
+      background: var(--c-lime);
+      margin-top: 0.5rem;
+    }
+
+    /* Number accent */
+    .num-accent {
+      font-family: var(--f-display);
+      font-size: var(--t-xs);
+      font-weight: 700;
+      color: var(--c-gray-2);
+      letter-spacing: 0.1em;
+    }
+
+    /* Active nav links */
+    .nav__links a.active {
+      color: var(--c-white);
+    }
+
+    /* Floating CTA button (mobile) */
+    .floating-cta {
+      display: none;
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+    }
+
+    @media (max-width: 600px) {
+      .floating-cta {
+        display: flex;
+      }
+    }
+
+    /* Image label overlays in gallery */
+    .gallery-label {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      font-size: var(--t-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-gray-4);
+      background: rgba(0,0,0,0.6);
+      padding: 0.3rem 0.6rem;
+      border-radius: var(--r-sm);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Hover underline animation */
+    .hover-underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hover-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--c-lime);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--dur-mid) var(--ease-out);
+    }
+
+    .hover-underline:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Section separator */
+    .sep {
+      border: none;
+      border-top: var(--border);
+    }
+
+    /* Feature dot */
+    .feature-check {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--c-lime);
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       ADVANTAGES — PREMIUM ANIMATIONS
+    ============================================= */
+
+    /* ── 3D TILT + SHINE ── */
+    .advantage-card {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .advantage-card__shine {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        circle at var(--mx, 50%) var(--my, 50%),
+        rgba(184,255,53,0.13) 0%,
+        transparent 65%
+      );
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 5;
+    }
+    .advantage-card:hover .advantage-card__shine {
+      opacity: 1;
+    }
+
+    /* ── ICON spin + scale on hover ── */
+    .advantage-card:hover .advantage-card__icon svg {
+      animation: advIconSpin 0.55s var(--ease-out) both;
+    }
+    @keyframes advIconSpin {
+      0%   { transform: rotate(0deg)  scale(1); }
+      45%  { transform: rotate(18deg) scale(1.25); }
+      100% { transform: rotate(0deg)  scale(1); }
+    }
+
+    /* ── BOTTOM accent line grows on hover (already exists via ::before,
+          here we enhance it with a glow) ── */
+    .advantage-card:hover::before {
+      box-shadow: 0 0 12px rgba(184,255,53,0.6);
+    }
+
+    /* ── COUNTER numbers animate in ── */
+    .adv-counter {
+      font-family: var(--f-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--c-lime);
+      letter-spacing: -0.03em;
+      display: block;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+    }
+    .adv-counter.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── STAGGER grid entrance ── */
+    .advantage-card {
+      opacity: 0;
+      transform: translateY(32px) scale(0.97);
+      transition:
+        opacity      0.65s var(--ease-out),
+        transform    0.65s var(--ease-out),
+        background   var(--dur-mid) var(--ease-out);
+    }
+    .advantage-card.adv-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* ── FLOATING ORBS behind advantages grid ── */
+    .advantages__orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+      z-index: 0;
+    }
+    .advantages__orb--1 {
+      width: 420px; height: 420px;
+      top: -60px; right: -80px;
+      background: radial-gradient(circle, rgba(184,255,53,0.07) 0%, transparent 70%);
+      animation: advOrb1 10s ease-in-out infinite;
+    }
+    .advantages__orb--2 {
+      width: 280px; height: 280px;
+      bottom: -40px; left: 5%;
+      background: radial-gradient(circle, rgba(184,255,53,0.05) 0%, transparent 70%);
+      animation: advOrb2 13s ease-in-out infinite;
+    }
+    @keyframes advOrb1 {
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(-30px, 25px); }
+    }
+    @keyframes advOrb2 {
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(20px,-20px); }
+    }
+
+    /* keep grid above orbs */
+    .advantages__grid { position: relative; z-index: 1; }
+
+    /* ── SECTION wrapper needs relative for orbs ── */
+    #advantages { position: relative; overflow: hidden; }
+
+    /* ── ICON box pulse glow on card enter ── */
+    .advantage-card.adv-visible .advantage-card__icon {
+      animation: iconGlowIn 0.6s var(--ease-out) both;
+    }
+    @keyframes iconGlowIn {
+      0%   { box-shadow: 0 0 0px rgba(184,255,53,0); }
+      60%  { box-shadow: 0 0 18px rgba(184,255,53,0.35); }
+      100% { box-shadow: 0 0 0px rgba(184,255,53,0); }
+    }
+
+    /* ── TITLE text shimmer on section enter ── */
+    #advantages .section-title {
+      background: linear-gradient(
+        90deg,
+        var(--c-white) 0%,
+        var(--c-white) 40%,
+        var(--c-lime) 50%,
+        var(--c-white) 60%,
+        var(--c-white) 100%
+      );
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    #advantages .section-title.adv-title-visible {
+      animation: titleShimmer 1.4s var(--ease-out) forwards;
+    }
+    @keyframes titleShimmer {
+      from { background-position: 200% center; }
+      to   { background-position:   0% center; }
+    }
+    /* keep em lime */
+    #advantages .section-title em {
+      -webkit-text-fill-color: var(--c-lime);
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .advantage-card,
+      .adv-counter,
+      .advantages__orb,
+      #advantages .section-title {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .advantage-card__shine { display: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" role="status" aria-label="Загрузка">
+    <div class="preloader__wordmark" aria-hidden="true">APEX</div>
+    <div class="preloader__bar-wrap" aria-hidden="true">
+      <div class="preloader__bar" id="preloaderBar"></div>
+    </div>
+    <div class="preloader__counter" id="preloaderCounter" aria-hidden="true">ИНИЦИАЛИЗАЦИЯ</div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header role="banner">
+    <nav class="nav" id="mainNav" aria-label="Основная навигация">
+      <a href="#hero" class="nav__logo" aria-label="APEX Fitness — главная">
+        APEX<span></span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#about">О клубе</a></li>
+        <li><a href="#programs">Программы</a></li>
+        <li><a href="#trainers">Тренеры</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+
+      <a href="#contact" class="nav__cta" aria-label="Записаться на тренировку">
+        Записаться
+      </a>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="nav__mobile" id="mobileMenu" role="dialog" aria-label="Меню навигации" aria-hidden="true">
+      <a href="#about" class="mobile-link">О клубе</a>
+      <a href="#programs" class="mobile-link">Программы</a>
+      <a href="#trainers" class="mobile-link">Тренеры</a>
+      <a href="#pricing" class="mobile-link">Тарифы</a>
+      <a href="#reviews" class="mobile-link">Отзывы</a>
+      <a href="#contact" class="mobile-link">Контакты</a>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero" aria-labelledby="heroHeadline">
+
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__mesh"></div>
+        <div class="hero__grid-lines"></div>
+      </div>
+
+      <!-- Right visual column -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__visual-inner">
+          <div class="hero__img-placeholder shimmer">
+            <!-- ФОТО 1: Hero — замените ФОТО_01.jpg на имя вашего файла -->
+            
+            <svg class="human-silhouette" viewBox="0 0 120 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="60" cy="28" rx="16" ry="16" fill="white"/>
+              <rect x="46" y="50" width="28" height="80" rx="8" fill="white"/>
+              <rect x="20" y="54" width="22" height="60" rx="8" fill="white"/>
+              <rect x="78" y="54" width="22" height="60" rx="8" fill="white"/>
+              <rect x="46" y="130" width="12" height="80" rx="6" fill="white"/>
+              <rect x="62" y="130" width="12" height="80" rx="6" fill="white"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__eyebrow" aria-label="Москва · Открыт 06:00 – 24:00">
+          Москва · Открыт 06:00 – 24:00
+        </div>
+        <h1 class="hero__headline" id="heroHeadline">
+          Твоё тело.<br>
+          Твои<br>
+          <em>правила.</em>
+        </h1>
+        <p class="hero__sub">
+          APEX — пространство, где достигают. Архитектурный дизайн, персональная методология и среда, которая не даёт остановиться.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary" aria-label="Получить бесплатное пробное занятие">
+            Первое занятие бесплатно
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#programs" class="btn btn--ghost" aria-label="Посмотреть программы тренировок">
+            Программы
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__bottom">
+        <div class="hero__stats" role="list" aria-label="Статистика клуба">
+          <div class="hero__stat" role="listitem">
+            <span class="hero__stat-num count-up" data-target="1200">0</span>
+            <span class="hero__stat-label">участников</span>
+          </div>
+          <div class="hero__stat" role="listitem">
+            <span class="hero__stat-num count-up" data-target="24">0</span>
+            <span class="hero__stat-label">тренера</span>
+          </div>
+          <div class="hero__stat" role="listitem">
+            <span class="hero__stat-num">6</span>
+            <span class="hero__stat-label">лет на рынке</span>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Силовые тренировки</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Функциональный тренинг</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Йога и растяжка</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Кроссфит</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Боевые искусства</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Кардио-зоны</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Персональные тренировки</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Бассейн и SPA</div>
+        <!-- Duplicate for loop -->
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Силовые тренировки</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Функциональный тренинг</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Йога и растяжка</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Кроссфит</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Боевые искусства</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Кардио-зоны</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Персональные тренировки</div>
+        <div class="marquee-item"><span class="marquee-item__dot"></span> Бассейн и SPA</div>
+      </div>
+    </div>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="about">
+        <div class="about__left reveal reveal--left">
+          <div class="section-label">О клубе</div>
+          <h2 class="section-title" id="aboutTitle">
+            Не просто<br>клуб — <em>среда</em>
+          </h2>
+          <p class="about__desc">
+            APEX создан для тех, кто знает, чего хочет. <strong>Архитектурное пространство</strong> в 4000 м², разработанное совместно с командой из Норвегии. Оборудование класса Olympic. Персональный подход — <strong>без исключений</strong>.
+          </p>
+          <p class="about__desc" style="margin-top:1rem;">
+            Здесь нет случайных людей. Только те, для кого результат — не цель, а стандарт.
+          </p>
+
+          <div class="about__meta" role="list" aria-label="Ключевые показатели">
+            <div class="about__meta-item" role="listitem">
+              <div class="about__meta-num count-up" data-target="4000" data-suffix=" м²">0</div>
+              <div class="about__meta-label">Общая площадь</div>
+            </div>
+            <div class="about__meta-item" role="listitem">
+              <div class="about__meta-num count-up" data-target="18" data-suffix="+">0</div>
+              <div class="about__meta-label">Направлений</div>
+            </div>
+            <div class="about__meta-item" role="listitem">
+              <div class="about__meta-num count-up" data-target="98" data-suffix="%">0</div>
+              <div class="about__meta-label">Рекомендуют</div>
+            </div>
+            <div class="about__meta-item" role="listitem">
+              <div class="about__meta-num">№<span>1</span></div>
+              <div class="about__meta-label">В Москве 2024</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem;">
+            <a href="#contact" class="btn btn--outline-lime">
+              Узнать больше
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="about__right reveal reveal--right">
+          <div class="about__img-wrap shimmer">
+            <!-- ФОТО 2: About — замените ФОТО_02.jpg на имя вашего файла -->
+            <img src="img/111.png" alt="Интерьер APEX" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+            <div class="about__img-placeholder">
+              <!-- Interior visualization -->
+              <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; opacity:0.08;" aria-hidden="true">
+                <rect x="20" y="300" width="260" height="80" fill="white"/>
+                <rect x="20" y="100" width="8" height="200" fill="white"/>
+                <rect x="272" y="100" width="8" height="200" fill="white"/>
+                <rect x="20" y="100" width="260" height="8" fill="white"/>
+                <rect x="80" y="140" width="60" height="120" fill="white"/>
+                <rect x="160" y="140" width="60" height="120" fill="white"/>
+                <rect x="40" y="230" width="220" height="70" fill="white"/>
+                <rect x="80" y="200" width="40" height="30" fill="#B8FF35" opacity="0.4"/>
+                <rect x="160" y="200" width="40" height="30" fill="#B8FF35" opacity="0.4"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="about__badge reveal">
+            <div class="about__badge-text">TOP FITNESS</div>
+            <div class="about__badge-sub">Russia Award 2024</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip" role="list" aria-label="Гарантии клуба">
+      <div class="trust-item" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Безопасность гарантирована
+      </div>
+      <div class="trust-item" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Заморозка в любой момент
+      </div>
+      <div class="trust-item" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Возврат денег в 48 ч
+      </div>
+      <div class="trust-item" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Персональный менеджер
+      </div>
+    </div>
+
+    <!-- ==================== ADVANTAGES ==================== -->
+    <section class="section section--dark" id="advantages" aria-labelledby="advantagesTitle">
+
+      <!-- floating orbs -->
+      <div class="advantages__orb advantages__orb--1" aria-hidden="true"></div>
+      <div class="advantages__orb advantages__orb--2" aria-hidden="true"></div>
+
+      <div class="reveal">
+        <div class="section-label">Преимущества</div>
+        <h2 class="section-title" id="advantagesTitle">Почему APEX — <em>другой</em></h2>
+      </div>
+
+      <div class="advantages__grid" role="list">
+
+        <article class="advantage-card reveal" role="listitem">
+          <div class="advantage-card__shine" aria-hidden="true"></div>
+          <div class="advantage-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 20h20M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/></svg>
+          </div>
+          <span class="adv-counter" data-target="4000" data-suffix=" м²" aria-hidden="true">4000 м²</span>
+          <h3 class="advantage-card__title">Архитектурное пространство</h3>
+          <p class="advantage-card__text">4000 м² с потолками 6 метров, зонированием по типам нагрузки и собственной акустической системой. Каждая деталь продумана.</p>
+        </article>
+
+        <article class="advantage-card reveal" style="transition-delay:0.1s" role="listitem">
+          <div class="advantage-card__shine" aria-hidden="true"></div>
+          <div class="advantage-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="adv-counter" data-target="200" data-suffix="+" aria-hidden="true">200+</span>
+          <h3 class="advantage-card__title">Оборудование Technogym</h3>
+          <p class="advantage-card__text">Официальный партнёр Technogym — поставщика Олимпийских игр. 200+ единиц оборудования без очередей и ожидания.</p>
+        </article>
+
+        <article class="advantage-card reveal" style="transition-delay:0.2s" role="listitem">
+          <div class="advantage-card__shine" aria-hidden="true"></div>
+          <div class="advantage-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="adv-counter" data-target="24" data-suffix=" тренера" aria-hidden="true">24 тренера</span>
+          <h3 class="advantage-card__title">24 персональных тренера</h3>
+          <p class="advantage-card__text">Сертифицированные специалисты с международными дипломами. Спортсмены, чемпионы, профессионалы с 10+ годами практики.</p>
+        </article>
+
+        <article class="advantage-card reveal" style="transition-delay:0.05s" role="listitem">
+          <div class="advantage-card__shine" aria-hidden="true"></div>
+          <div class="advantage-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span class="adv-counter" data-target="3" data-suffix=" теста" aria-hidden="true">3 теста</span>
+          <h3 class="advantage-card__title">Биометрический анализ</h3>
+          <p class="advantage-card__text">InBody-сканирование, VO2 max тест, анализ движения. Ваша программа строится на данных, а не на догадках.</p>
+        </article>
+
+        <article class="advantage-card reveal" style="transition-delay:0.15s" role="listitem">
+          <div class="advantage-card__shine" aria-hidden="true"></div>
+          <div class="advantage-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <span class="adv-counter" data-target="18" data-suffix=" ч/день" aria-hidden="true">18 ч/день</span>
+          <h3 class="advantage-card__title">Открыт 18 часов в день</h3>
+          <p class="advantage-card__text">06:00 – 24:00 ежедневно. Тренируйтесь в своём ритме — ранним утром перед работой или ночью после дедлайна.</p>
+        </article>
+
+        <article class="advantage-card reveal" style="transition-delay:0.25s" role="listitem">
+          <div class="advantage-card__shine" aria-hidden="true"></div>
+          <div class="advantage-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/><path d="M2 17c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/><path d="M8 7l2-4 2 2 2-2 2 4"/></svg>
+          </div>
+          <span class="adv-counter" data-target="25" data-suffix=" м бассейн" aria-hidden="true">25 м бассейн</span>
+          <h3 class="advantage-card__title">Бассейн 25 м + SPA</h3>
+          <p class="advantage-card__text">Плавательные дорожки, термальная зона, хаммам и криосауна. Полное восстановление после каждой тренировки.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== PROGRAMS ==================== -->
+    <section class="section" id="programs" aria-labelledby="programsTitle">
+      <div class="programs__header reveal">
+        <div>
+          <div class="section-label">Направления</div>
+          <h2 class="section-title" id="programsTitle">Найди <em>своё</em></h2>
+        </div>
+        <a href="#contact" class="btn btn--ghost" aria-label="Записаться на пробное занятие">
+          Пробное занятие
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="programs__grid" role="list">
+
+        <article class="program-card program-card--featured reveal reveal--scale" role="listitem">
+          <!-- ФОТО 3: Силовой тренинг — замените ФОТО_03.jpg на имя вашего файла -->
+          <img src="img/1.png" alt="Силовой тренинг" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;border-radius:inherit;">
+          <div class="program-card__accent" aria-hidden="true"></div>
+          <div class="program-card__inner">
+            <div>
+              <div class="program-card__tag">Топ выбор</div>
+              <h3 class="program-card__title">Силовой<br>тренинг</h3>
+            </div>
+            <div>
+              <div class="program-card__meta">120+ занятий · Любой уровень</div>
+              
+            </div>
+          </div>
+        </article>
+
+        <article class="program-card reveal" style="transition-delay:0.1s" role="listitem">
+          <!-- ФОТО 4: Функциональный тренинг — замените ФОТО_04.jpg на имя вашего файла -->
+          <img src="img/2.png" alt="Функциональный тренинг" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;border-radius:inherit;">
+          <div class="program-card__inner">
+            <div>
+              <div class="program-card__tag">Новинка</div>
+              <h3 class="program-card__title">Функциональный<br>тренинг</h3>
+            </div>
+            <div class="program-card__meta">60 занятий · Все уровни</div>
+          </div>
+        </article>
+
+        <article class="program-card reveal" style="transition-delay:0.2s" role="listitem">
+          <!-- ФОТО 5: Йога & Пилатес — замените ФОТО_05.jpg на имя вашего файла -->
+          <img src="img/3.jpg" alt="Йога и Пилатес" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;border-radius:inherit;">
+          <div class="program-card__inner">
+            <div>
+              <div class="program-card__tag">Популярно</div>
+              <h3 class="program-card__title">Йога &<br>Пилатес</h3>
+            </div>
+            <div class="program-card__meta">45 занятий · Начинающие+</div>
+          </div>
+        </article>
+
+        <article class="program-card reveal" style="transition-delay:0.15s" role="listitem">
+          <!-- ФОТО 6: Кроссфит & HIIT — замените ФОТО_06.jpg на имя вашего файла -->
+          <img src="img/4.jpg" alt="Кроссфит и HIIT" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;border-radius:inherit;">
+          <div class="program-card__inner">
+            <div>
+              <div class="program-card__tag">Интенсив</div>
+              <h3 class="program-card__title">Кроссфит<br>& HIIT</h3>
+            </div>
+            <div class="program-card__meta">80 занятий · Продвинутый</div>
+          </div>
+        </article>
+
+        <article class="program-card reveal" style="transition-delay:0.25s" role="listitem">
+          <!-- ФОТО 7: Боевые искусства — замените ФОТО_07.jpg на имя вашего файла -->
+          <img src="img/5.jpg" alt="Боевые искусства" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;border-radius:inherit;">
+          <div class="program-card__inner">
+            <div>
+              <div class="program-card__tag">Эксклюзив</div>
+              <h3 class="program-card__title">Боевые<br>искусства</h3>
+            </div>
+            <div class="program-card__meta">35 занятий · MMA, Бокс, BJJ</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== TRAINERS ==================== -->
+    <section class="section section--dark" id="trainers" aria-labelledby="trainersTitle">
+      <div class="reveal">
+        <div class="section-label">Команда</div>
+        <h2 class="section-title" id="trainersTitle">Тренеры, которые <em>меняют</em></h2>
+        <p style="margin-top:1rem; color:var(--c-gray-3); font-size:var(--t-base); max-width:500px; line-height:1.7;">Каждый из наших тренеров — практик, не теоретик. Их результаты говорят за себя.</p>
+      </div>
+
+      <div class="trainers__grid" role="list">
+
+        <article class="trainer-card reveal" role="listitem" aria-labelledby="trainerName1">
+          <div class="trainer-card__photo shimmer">
+            <!-- ФОТО 8: Алексей Морозов — замените ФОТО_08.jpg на имя вашего файла -->
+            <img src="img/11.jpg" alt="Алексей Морозов" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="trainer-card__photo-placeholder" aria-hidden="true">
+              <svg class="trainer-avatar" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="40" cy="28" rx="16" ry="16" fill="white"/>
+                <rect x="20" y="50" width="40" height="50" rx="10" fill="white"/>
+              </svg>
+            </div>
+            <div class="trainer-card__overlay" aria-hidden="true"></div>
+            <div class="trainer-card__info">
+              <div class="trainer-card__name" id="trainerName1">Алексей Морозов</div>
+              <div class="trainer-card__role">Силовой тренинг · МСМК</div>
+            </div>
+          </div>
+          <div class="trainer-card__body">
+            <p class="trainer-card__exp">12 лет практики. Чемпион России по пауэрлифтингу. Работает со спортсменами сборных.</p>
+          </div>
+        </article>
+
+        <article class="trainer-card reveal" style="transition-delay:0.1s" role="listitem" aria-labelledby="trainerName2">
+          <div class="trainer-card__photo shimmer">
+            <!-- ФОТО 9: Мария Соколова — замените ФОТО_09.jpg на имя вашего файла -->
+            <img src="img/12.jpg" alt="Мария Соколова" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="trainer-card__photo-placeholder" aria-hidden="true">
+              <svg class="trainer-avatar" viewBox="0 0 80 100" fill="none" aria-hidden="true">
+                <ellipse cx="40" cy="28" rx="16" ry="16" fill="white"/>
+                <rect x="20" y="50" width="40" height="50" rx="10" fill="white"/>
+              </svg>
+            </div>
+            <div class="trainer-card__overlay" aria-hidden="true"></div>
+            <div class="trainer-card__info">
+              <div class="trainer-card__name" id="trainerName2">Мария Соколова</div>
+              <div class="trainer-card__role">Йога · Функциональный</div>
+            </div>
+          </div>
+          <div class="trainer-card__body">
+            <p class="trainer-card__exp">8 лет в профессии. Дипломы RYT-500, TRX, FMS. 300+ трансформаций клиентов.</p>
+          </div>
+        </article>
+
+        <article class="trainer-card reveal" style="transition-delay:0.2s" role="listitem" aria-labelledby="trainerName3">
+          <div class="trainer-card__photo shimmer">
+            <!-- ФОТО 10: Дмитрий Волков — замените ФОТО_10.jpg на имя вашего файла -->
+            <img src="img/13.jpg" alt="Дмитрий Волков" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="trainer-card__photo-placeholder" aria-hidden="true">
+              <svg class="trainer-avatar" viewBox="0 0 80 100" fill="none" aria-hidden="true">
+                <ellipse cx="40" cy="28" rx="16" ry="16" fill="white"/>
+                <rect x="20" y="50" width="40" height="50" rx="10" fill="white"/>
+              </svg>
+            </div>
+            <div class="trainer-card__overlay" aria-hidden="true"></div>
+            <div class="trainer-card__info">
+              <div class="trainer-card__name" id="trainerName3">Дмитрий Волков</div>
+              <div class="trainer-card__role">CrossFit · HIIT · MMA</div>
+            </div>
+          </div>
+          <div class="trainer-card__body">
+            <p class="trainer-card__exp">CrossFit Level-2 Trainer. Бронза РФ по MMA. Специализация — скоростно-силовые качества.</p>
+          </div>
+        </article>
+
+        <article class="trainer-card reveal" style="transition-delay:0.3s" role="listitem" aria-labelledby="trainerName4">
+          <div class="trainer-card__photo shimmer">
+            <!-- ФОТО 11: Елена Краснова — замените ФОТО_11.jpg на имя вашего файла -->
+            <img src="img/14.jpg" alt="Елена Краснова" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="trainer-card__photo-placeholder" aria-hidden="true">
+              <svg class="trainer-avatar" viewBox="0 0 80 100" fill="none" aria-hidden="true">
+                <ellipse cx="40" cy="28" rx="16" ry="16" fill="white"/>
+                <rect x="20" y="50" width="40" height="50" rx="10" fill="white"/>
+              </svg>
+            </div>
+            <div class="trainer-card__overlay" aria-hidden="true"></div>
+            <div class="trainer-card__info">
+              <div class="trainer-card__name" id="trainerName4">Елена Краснова</div>
+              <div class="trainer-card__role">Пилатес · Реабилитация</div>
+            </div>
+          </div>
+          <div class="trainer-card__body">
+            <p class="trainer-card__exp">Физиотерапевт, пилатес-инструктор. Опыт работы с реабилитацией и спортивными травмами — 11 лет.</p>
+          </div>
+        </article>
+
+      </div>
+
+      
+    </section>
+
+    <!-- ==================== SCHEDULE ==================== -->
+    <section class="section" id="schedule" aria-labelledby="scheduleTitle">
+      <div class="reveal">
+        <div class="section-label">Расписание</div>
+        <h2 class="section-title" id="scheduleTitle">Сегодня в <em>APEX</em></h2>
+      </div>
+
+      <div class="schedule__tabs" role="tablist" aria-label="Дни недели">
+        <button class="schedule__tab active" role="tab" aria-selected="true" data-day="0">Пн</button>
+        <button class="schedule__tab" role="tab" aria-selected="false" data-day="1">Вт</button>
+        <button class="schedule__tab" role="tab" aria-selected="false" data-day="2">Ср</button>
+        <button class="schedule__tab" role="tab" aria-selected="false" data-day="3">Чт</button>
+        <button class="schedule__tab" role="tab" aria-selected="false" data-day="4">Пт</button>
+        <button class="schedule__tab" role="tab" aria-selected="false" data-day="5">Сб</button>
+        <button class="schedule__tab" role="tab" aria-selected="false" data-day="6">Вс</button>
+      </div>
+
+      <div class="schedule__table reveal" role="table" aria-label="Расписание занятий">
+        <div class="schedule__row" style="background:var(--c-graphite-3);" role="row">
+          <div class="schedule__cell" role="columnheader"><span style="font-size:var(--t-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--c-gray-3);">Время</span></div>
+          <div class="schedule__cell" role="columnheader"><span style="font-size:var(--t-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--c-gray-3);">Занятие</span></div>
+          <div class="schedule__cell" role="columnheader"><span style="font-size:var(--t-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--c-gray-3);">Тренер</span></div>
+          <div class="schedule__cell" role="columnheader"><span style="font-size:var(--t-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--c-gray-3);">Места</span></div>
+        </div>
+        <div class="schedule__row" role="row">
+          <div class="schedule__cell"><span class="schedule__time">07:00</span></div>
+          <div class="schedule__cell"><span class="schedule__class">Силовой тренинг</span></div>
+          <div class="schedule__cell">А. Морозов</div>
+          <div class="schedule__cell"><span class="schedule__tag">3 места</span></div>
+        </div>
+        <div class="schedule__row" role="row">
+          <div class="schedule__cell"><span class="schedule__time">09:30</span></div>
+          <div class="schedule__cell"><span class="schedule__class">Йога Flow</span></div>
+          <div class="schedule__cell">М. Соколова</div>
+          <div class="schedule__cell"><span class="schedule__tag">8 мест</span></div>
+        </div>
+        <div class="schedule__row" role="row">
+          <div class="schedule__cell"><span class="schedule__time">12:00</span></div>
+          <div class="schedule__cell"><span class="schedule__class">HIIT — 45 мин</span></div>
+          <div class="schedule__cell">Д. Волков</div>
+          <div class="schedule__cell"><span class="schedule__tag">5 мест</span></div>
+        </div>
+        <div class="schedule__row" role="row">
+          <div class="schedule__cell"><span class="schedule__time">14:00</span></div>
+          <div class="schedule__cell"><span class="schedule__class">Пилатес Pro</span></div>
+          <div class="schedule__cell">Е. Краснова</div>
+          <div class="schedule__cell"><span class="schedule__tag">Свободно</span></div>
+        </div>
+        <div class="schedule__row" role="row">
+          <div class="schedule__cell"><span class="schedule__time">18:00</span></div>
+          <div class="schedule__cell"><span class="schedule__class">CrossFit Rx</span></div>
+          <div class="schedule__cell">Д. Волков</div>
+          <div class="schedule__cell"><span class="schedule__tag">2 места</span></div>
+        </div>
+        <div class="schedule__row" role="row">
+          <div class="schedule__cell"><span class="schedule__time">20:00</span></div>
+          <div class="schedule__cell"><span class="schedule__class">Боевые искусства</span></div>
+          <div class="schedule__cell">А. Морозов</div>
+          <div class="schedule__cell"><span class="schedule__tag">Свободно</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRICING ==================== -->
+    <section class="section section--darker" id="pricing" aria-labelledby="pricingTitle">
+      <div style="text-align:center;" class="reveal">
+        <div class="section-label" style="justify-content:center;">Тарифы</div>
+        <h2 class="section-title" id="pricingTitle">Инвестиция в <em>себя</em></h2>
+        <p style="margin-top:1rem; color:var(--c-gray-3); max-width:480px; margin-left:auto; margin-right:auto; font-weight:300; line-height:1.7;">
+          Первое посещение бесплатно. Без скрытых условий.
+        </p>
+      </div>
+
+      <div class="pricing__grid" role="list">
+
+        <!-- START -->
+        <article class="price-card reveal" role="listitem" aria-labelledby="planStart">
+          <div class="price-card__head">
+            <div class="price-card__name" id="planStart">Старт</div>
+            <div class="price-card__price">9900 <span>₽</span></div>
+            <div class="price-card__period">в месяц · без заморозки</div>
+          </div>
+          <ul class="price-card__features">
+            <li class="price-card__feature active">Тренажёрный зал</li>
+            <li class="price-card__feature active">Групповые занятия (базовые)</li>
+            <li class="price-card__feature active">Раздевалки + душ</li>
+            <li class="price-card__feature">Бассейн</li>
+            <li class="price-card__feature">SPA-зона</li>
+            <li class="price-card__feature">Персональный тренер</li>
+          </ul>
+          <div class="price-card__footer">
+            <hr class="price-card__divider">
+            <a href="#contact" class="btn btn--ghost" style="width:100%;justify-content:center;" aria-label="Выбрать тариф Старт">
+              Выбрать
+            </a>
+          </div>
+        </article>
+
+        <!-- PREMIUM (featured) -->
+        <article class="price-card price-card--featured reveal" style="transition-delay:0.15s" role="listitem" aria-labelledby="planPremium">
+          <div class="price-card__badge" aria-label="Рекомендуем">Хит</div>
+          <div class="price-card__head">
+            <div class="price-card__name" id="planPremium">Премиум</div>
+            <div class="price-card__price">18900 <span>₽</span></div>
+            <div class="price-card__period">в месяц · заморозка до 14 дней</div>
+          </div>
+          <ul class="price-card__features">
+            <li class="price-card__feature active">Тренажёрный зал</li>
+            <li class="price-card__feature active">Все групповые занятия</li>
+            <li class="price-card__feature active">Бассейн 25 м</li>
+            <li class="price-card__feature active">SPA-зона и хаммам</li>
+            <li class="price-card__feature active">1 вводная с тренером</li>
+            <li class="price-card__feature">Персональный тренер (оплата отдельно)</li>
+          </ul>
+          <div class="price-card__footer">
+            <hr class="price-card__divider">
+            <a href="#contact" class="btn btn--primary" style="width:100%;justify-content:center;" aria-label="Выбрать тариф Премиум">
+              Выбрать
+            </a>
+          </div>
+        </article>
+
+        <!-- ELITE -->
+        <article class="price-card reveal" style="transition-delay:0.3s" role="listitem" aria-labelledby="planElite">
+          <div class="price-card__head">
+            <div class="price-card__name" id="planElite">Элита</div>
+            <div class="price-card__price">34900 <span>₽</span></div>
+            <div class="price-card__period">в месяц · заморозка до 30 дней</div>
+          </div>
+          <ul class="price-card__features">
+            <li class="price-card__feature active">Всё включено</li>
+            <li class="price-card__feature active">4 персональных тренировки</li>
+            <li class="price-card__feature active">Биометрический анализ</li>
+            <li class="price-card__feature active">Нутрициолог — консультация</li>
+            <li class="price-card__feature active">Гостевые визиты (2 в мес.)</li>
+            <li class="price-card__feature active">Приоритетная запись</li>
+          </ul>
+          <div class="price-card__footer">
+            <hr class="price-card__divider">
+            <a href="#contact" class="btn btn--ghost" style="width:100%;justify-content:center;" aria-label="Выбрать тариф Элита">
+              Выбрать
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="text-align:center;margin-top:2rem;font-size:var(--t-xs);color:var(--c-gray-3);">
+        Первое занятие — бесплатно. Без карты. Без обязательств.
+      </p>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="reveal">
+        <div class="section-label">Отзывы</div>
+        <h2 class="section-title" id="reviewsTitle">Говорят <em>члены клуба</em></h2>
+      </div>
+
+      <div class="testimonials__slider" role="list">
+
+        <article class="testimonial-card reveal" role="listitem">
+          <div class="testimonial-card__quote" aria-hidden="true">"</div>
+          <blockquote>
+            <p class="testimonial-card__text">За 6 месяцев потерял 18 кг и набрал 8 кг мышц. Это не просто клуб — это система. Алексей выстроил мне программу, которая реально работает.</p>
+          </blockquote>
+          <div class="testimonial-card__author">
+            
+            <div>
+              <div class="testimonial-card__name">Артём Калинин</div>
+              <div class="testimonial-card__meta">Член клуба · 1 год</div>
+            </div>
+            <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal" style="transition-delay:0.15s" role="listitem">
+          <div class="testimonial-card__quote" aria-hidden="true">"</div>
+          <blockquote>
+            <p class="testimonial-card__text">Я была в 12 разных клубах Москвы. APEX — единственное место, где я не хочу пропускать тренировки. Атмосфера другого уровня.</p>
+          </blockquote>
+          <div class="testimonial-card__author">
+            
+            <div>
+              <div class="testimonial-card__name">Наталья Верхова</div>
+              <div class="testimonial-card__meta">Член клуба · 2 года</div>
+            </div>
+            <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal" style="transition-delay:0.3s" role="listitem">
+          <div class="testimonial-card__quote" aria-hidden="true">"</div>
+          <blockquote>
+            <p class="testimonial-card__text">Пришёл после операции на колене. Елена Краснова поставила меня на ноги за 4 месяца. Сейчас бегаю полумарафон. Не ожидал такого.</p>
+          </blockquote>
+          <div class="testimonial-card__author">
+            
+            <div>
+              <div class="testimonial-card__name">Игорь Смирнов</div>
+              <div class="testimonial-card__meta">Член клуба · 8 месяцев</div>
+            </div>
+            <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="section section--dark" id="gallery" aria-labelledby="galleryTitle">
+      <div class="reveal">
+        <div class="section-label">Клуб</div>
+        <h2 class="section-title" id="galleryTitle">Пространство, где <em>хочется</em></h2>
+      </div>
+
+      <div class="gallery__grid" role="list" aria-label="Фотографии клуба">
+
+        <div class="gallery-item shimmer" role="listitem">
+          <div class="gallery-item__bg gallery-placeholder-1" style="height:100%;display:flex;align-items:center;justify-content:center;">
+            <!-- ФОТО 12: Силовая зона — замените ФОТО_12.jpg на имя вашего файла -->
+            <img src="img/21.jpg" alt="Силовая зона" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.06" aria-hidden="true">
+              <rect x="10" y="40" width="12" height="30" fill="white"/>
+              <rect x="30" y="25" width="12" height="45" fill="white"/>
+              <rect x="50" y="10" width="12" height="60" fill="white"/>
+            </svg>
+          </div>
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <div class="gallery-item__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+          </div>
+          <div class="gallery-label">Силовая зона</div>
+        </div>
+
+        <div class="gallery-item shimmer" role="listitem">
+          <div class="gallery-item__bg gallery-placeholder-2" style="height:100%;display:flex;align-items:center;justify-content:center;">
+            <!-- ФОТО 13: Бассейн — замените ФОТО_13.jpg на имя вашего файла -->
+            <img src="img/22.jpg" alt="Бассейн" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.06" aria-hidden="true">
+              <circle cx="30" cy="30" r="25" stroke="white" stroke-width="2"/>
+              <path d="M20 30 Q30 15 40 30" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="gallery-item__overlay" aria-hidden="true"><div class="gallery-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+          <div class="gallery-label">Бассейн</div>
+        </div>
+
+        <div class="gallery-item shimmer" role="listitem">
+          <div class="gallery-item__bg gallery-placeholder-3" style="height:100%;display:flex;align-items:center;justify-content:center;">
+            <!-- ФОТО 14: Кардио-зона — замените ФОТО_14.jpg на имя вашего файла -->
+            <img src="img/23.jpg" alt="Кардио-зона" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.06" aria-hidden="true">
+              <path d="M10 50 L30 10 L50 50" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="gallery-item__overlay" aria-hidden="true"><div class="gallery-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+          <div class="gallery-label">Кардио-зона</div>
+        </div>
+
+        <div class="gallery-item shimmer" role="listitem">
+          <div class="gallery-item__bg gallery-placeholder-4" style="height:100%;display:flex;align-items:center;justify-content:center;">
+            <!-- ФОТО 15: SPA-зона — замените ФОТО_15.jpg на имя вашего файла -->
+            <img src="img/24.jpg" alt="SPA-зона" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.06" aria-hidden="true">
+              <rect x="10" y="10" width="40" height="40" rx="5" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="gallery-item__overlay" aria-hidden="true"><div class="gallery-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+          <div class="gallery-label">SPA-зона</div>
+        </div>
+
+        <div class="gallery-item shimmer" role="listitem">
+          <div class="gallery-item__bg gallery-placeholder-5" style="height:100%;display:flex;align-items:center;justify-content:center;">
+            <!-- ФОТО 16: Йога-студия — замените ФОТО_16.jpg на имя вашего файла -->
+            <img src="img/25.jpg" alt="Йога-студия" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.06" aria-hidden="true">
+              <path d="M10 30 Q30 5 50 30 Q30 55 10 30" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          
+          <div class="gallery-item__overlay" aria-hidden="true"><div class="gallery-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+          <div class="gallery-label">Йога-студия</div>
+        </div>
+        <div class="gallery-item shimmer" role="listitem">
+          <div class="gallery-item__bg gallery-placeholder-3" style="height:100%;display:flex;align-items:center;justify-content:center;">
+            <!-- ФОТО 17: Раздевалки & Lounge — замените ФОТО_17.jpg на имя вашего файла -->
+            <img src="img/26.png" alt="Раздевалки и Lounge" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.06" aria-hidden="true">
+              <rect x="10" y="15" width="40" height="30" rx="4" stroke="white" stroke-width="2" fill="none"/>
+              <path d="M20 25 h20 M20 32 h12" stroke="white" stroke-width="2"/>
+              <circle cx="43" cy="12" r="5" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="gallery-item__overlay" aria-hidden="true"><div class="gallery-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div></div>
+          <div class="gallery-label">Раздевалки & Lounge</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section" id="faq" aria-labelledby="faqTitle">
+      <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:5rem; align-items:start;" class="faq-grid">
+        <div class="reveal">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title" id="faqTitle">Часто<br>спрашивают</h2>
+          <p style="margin-top:1.5rem;color:var(--c-gray-3);font-size:var(--t-base);line-height:1.75;font-weight:300;">
+            Ещё остались вопросы? Позвоните нам или оставьте заявку — ответим в течение 15 минут.
+          </p>
+          <div style="margin-top:2rem;">
+            <a href="#contact" class="btn btn--primary" aria-label="Оставить заявку">
+              Оставить заявку
+            </a>
+          </div>
+        </div>
+
+        <div class="faq__list reveal" role="list" aria-label="Часто задаваемые вопросы">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Можно ли прийти на пробную тренировку?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-item__body">
+              <p class="faq-item__answer">Да, первое занятие в любом из наших залов — полностью бесплатно. Просто оставьте заявку, и мы подберём удобное время и тренера под ваши цели.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Можно ли заморозить абонемент?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-item__body">
+              <p class="faq-item__answer">Заморозка доступна для тарифов Премиум (до 14 дней) и Элита (до 30 дней). Нужно просто сообщить нашему менеджеру за 24 часа.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Работает ли клуб в выходные?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-item__body">
+              <p class="faq-item__answer">Клуб открыт семь дней в неделю с 06:00 до 24:00. В праздничные дни режим работы может незначительно меняться — следите за уведомлениями в приложении.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Как проходит первое занятие?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-item__body">
+              <p class="faq-item__answer">Мы проведём короткое собеседование о ваших целях, сделаем замер состава тела и проведём 45-минутную тренировку с персональным тренером. Вы уйдёте с конкретным планом на следующие 3 месяца.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Можно ли приходить с гостем?</span>
+              <span class="faq-item__icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-item__body">
+              <p class="faq-item__answer">Тариф Элита включает 2 гостевых визита в месяц. Для остальных тарифов доступна разовая гостевая карта за 1 500 ₽.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div style="padding: 0 var(--s-container) var(--s-section);">
+      <div class="cta-banner reveal reveal--scale">
+        <div class="cta-banner__glow" aria-hidden="true"></div>
+        <div class="cta-banner__grid" aria-hidden="true"></div>
+        <div class="cta-banner__content">
+          <div class="cta-banner__eyebrow">Ограниченный набор</div>
+          <h2 class="cta-banner__title">Начни сегодня.<br>Почувствуй разницу.</h2>
+          <p class="cta-banner__sub">Осталось 7 мест на этот месяц. Первое занятие — бесплатно.</p>
+          <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+            <a href="#contact" class="btn btn--primary" aria-label="Начать с бесплатного занятия">
+              Начать бесплатно
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="tel:+74950000000" class="btn btn--ghost" aria-label="Позвонить нам">
+              +7 (495) 000-00-00
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section section--darker" id="contact" aria-labelledby="contactTitle">
+      <div class="contact-section">
+        <div class="reveal">
+          <div class="section-label">Контакты</div>
+          <h2 class="section-title contact__info-title" id="contactTitle">
+            Запишись<br>на <em>первый шаг</em>
+          </h2>
+          <p class="contact__desc">
+            Наши менеджеры свяжутся с вами в течение 15 минут и подберут оптимальную программу.
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact__detail-label">Телефон</div>
+                <a href="tel:+74950000000" class="contact__detail-value hover-underline">+7 (495) 000-00-00</a>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact__detail-label">Email</div>
+                <a href="mailto:hello@apex-fitness.com" class="contact__detail-value hover-underline">hello@apex-fitness.com</a>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact__detail-label">Адрес</div>
+                <div class="contact__detail-value">ул. Новый Арбат, 10, Москва</div>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact__detail-label">Время работы</div>
+                <div class="contact__detail-value">Пн–Вс: 06:00 – 24:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="reveal reveal--right">
+          <div class="form" role="region" aria-label="Форма записи">
+            <div id="formContent">
+              <h3 class="form__title">Записаться бесплатно</h3>
+              <p class="form__sub">Ответим в течение 15 минут</p>
+
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="name">Ваше имя</label>
+                  <input
+                    class="form__input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Иван"
+                    autocomplete="given-name"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="phone">Телефон</label>
+                  <input
+                    class="form__input"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7 (___) ___-__-__"
+                    autocomplete="tel"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="goal">Ваша цель</label>
+                <select class="form__select" id="goal" name="goal" aria-required="true" required>
+                  <option value="" disabled selected>Выберите цель</option>
+                  <option value="weight">Снижение веса</option>
+                  <option value="muscle">Набор мышечной массы</option>
+                  <option value="health">Здоровье и восстановление</option>
+                  <option value="sport">Спортивные достижения</option>
+                  <option value="relax">Расслабление и снятие стресса</option>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="time">Удобное время</label>
+                <select class="form__select" id="time" name="time">
+                  <option value="" disabled selected>Когда вам удобно?</option>
+                  <option value="morning">Утро (06:00–10:00)</option>
+                  <option value="day">День (10:00–17:00)</option>
+                  <option value="evening">Вечер (17:00–22:00)</option>
+                </select>
+              </div>
+
+              <button type="button" class="btn btn--primary" id="submitBtn" style="width:100%;justify-content:center;padding:1rem 2rem;font-size:var(--t-base);" aria-label="Отправить заявку">
+                Отправить заявку
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <p class="form__privacy">
+                Нажимая кнопку, вы соглашаетесь с
+                <a href="#" aria-label="Политика конфиденциальности">Политикой конфиденциальности</a>
+                и даёте согласие на обработку персональных данных.
+              </p>
+            </div>
+
+            <!-- Success state -->
+            <div class="form__success" id="formSuccess" aria-live="polite">
+              <div class="form__success-icon" aria-hidden="true">✓</div>
+              <h3>Заявка отправлена!</h3>
+              <p>Мы свяжемся с вами в течение 15 минут и подберём идеальное время.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <div class="footer__logo">APEX<span></span></div>
+        <p class="footer__tagline">
+          Премиальный фитнес-клуб нового поколения. Пространство, где формируются лучшие версии себя.
+        </p>
+        <nav class="footer__social" aria-label="Социальные сети">
+          <a href="#" aria-label="Instagram APEX">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Telegram APEX">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 3L3 9.5l6.5 1.5L12 17l2-5 7-9z"/></svg>
+          </a>
+          <a href="#" aria-label="VK APEX">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 11.5h-1.75c-.66 0-.83-.57-1.97-1.71-.97-.97-1.4-.63-1.4.28v.93c0 .3-.1.5-.93.5C8.97 13.5 7 11.55 5.95 9.26c-.62-1.28-.13-1.76.64-1.76h1.77c.58 0 .8.27 1.02.83.71 1.75 1.9 3.29 2.39 3.29.18 0 .26-.08.26-.53V8.96c-.05-.82-.48-.89-.48-1.18 0-.24.2-.48.51-.48h2.78c.44 0 .6.24.6.73v3.12c0 .44.19.6.31.6.18 0 .37-.16.73-.52 1.12-1.26 1.92-3.19 1.92-3.19.1-.22.3-.44.87-.44h1.75c.52 0 .64.27.52.64-.63 2.43-3.3 4.17-3.3 4.17-.28.46-.09.66.1.91.63.82 1.95 2.5 1.95 3.03 0 .63-.39.46-.39.46z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube APEX">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      <nav aria-label="Клуб">
+        <div class="footer__col-title">Клуб</div>
+        <ul class="footer__links">
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#programs">Программы</a></li>
+          <li><a href="#trainers">Тренеры</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#pricing">Тарифы</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Информация">
+        <div class="footer__col-title">Информация</div>
+        <ul class="footer__links">
+          <li><a href="#schedule">Расписание</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#">Приложение</a></li>
+          <li><a href="#">Блог</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Контакты">
+        <div class="footer__col-title">Контакты</div>
+        <ul class="footer__links">
+          <li><a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a href="mailto:hello@apex-fitness.com">hello@apex-fitness.com</a></li>
+          <li><a href="#">ул. Новый Арбат, 10</a></li>
+          <li><a href="#">Пн–Вс: 06:00–24:00</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 APEX Fitness. Все права защищены.</p>
+      <nav class="footer__legal" aria-label="Юридические документы">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Условия использования</a>
+      </nav>
+    </div>
+  </footer>
+
+
+
+  <!-- =============================================
+       JAVASCRIPT — VANILLA, CLEAN, PERFORMANT
+  ============================================= -->
+  <script>
+    'use strict';
+
+    /* ─── PRELOADER ─── */
+    (function() {
+      const preloader = document.getElementById('preloader');
+      const counter = document.getElementById('preloaderCounter');
+      const messages = ['ИНИЦИАЛИЗАЦИЯ', 'ЗАГРУЗКА РЕСУРСОВ', 'ГОТОВО'];
+      let idx = 0;
+
+      const msgInterval = setInterval(() => {
+        idx++;
+        if (idx < messages.length) {
+          counter.textContent = messages[idx];
+        } else {
+          clearInterval(msgInterval);
+        }
+      }, 600);
+
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          preloader.classList.add('hidden');
+          document.documentElement.classList.add('loaded');
+        }, 2000);
+      });
+
+      // Fallback if load event is slow
+      setTimeout(() => {
+        preloader.classList.add('hidden');
+      }, 3500);
+    })();
+
+    /* ─── NAV SCROLL BEHAVIOUR ─── */
+    (function() {
+      const nav = document.getElementById('mainNav');
+      let lastY = 0;
+
+      const onScroll = () => {
+        const y = window.scrollY;
+        if (y > 60) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        lastY = y;
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    /* ─── MOBILE MENU ─── */
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const links = mobileMenu.querySelectorAll('a');
+      let open = false;
+
+      const toggle = () => {
+        open = !open;
+        hamburger.classList.toggle('active', open);
+        mobileMenu.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', open);
+        mobileMenu.setAttribute('aria-hidden', !open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+
+      hamburger.addEventListener('click', toggle);
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (open) toggle();
+        });
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && open) toggle();
+      });
+    })();
+
+    /* ─── RIPPLE EFFECT ON BUTTONS ─── */
+    (function() {
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          btn.style.setProperty('--x', x + '%');
+          btn.style.setProperty('--y', y + '%');
+        });
+      });
+    })();
+
+    /* ─── INTERSECTION OBSERVER — REVEAL ANIMATIONS ─── */
+    (function() {
+      const elements = document.querySelectorAll('.reveal');
+      if (!elements.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -60px 0px'
+      });
+
+      elements.forEach(el => observer.observe(el));
+    })();
+
+    /* ─── COUNT-UP ANIMATION ─── */
+    (function() {
+      const counters = document.querySelectorAll('.count-up');
+      if (!counters.length) return;
+
+      const ease = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+      const animate = (el, target, suffix) => {
+        const duration = 1800;
+        const start = performance.now();
+
+        const update = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const value = Math.round(ease(progress) * target);
+          el.textContent = value.toLocaleString('ru') + (suffix || '');
+          if (progress < 1) requestAnimationFrame(update);
+        };
+
+        requestAnimationFrame(update);
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target, 10);
+            const suffix = el.dataset.suffix || '';
+            animate(el, target, suffix);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(el => observer.observe(el));
+    })();
+
+    /* ─── FAQ ACCORDION ─── */
+    (function() {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        const trigger = item.querySelector('.faq-item__trigger');
+        if (!trigger) return;
+
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          // Close all
+          items.forEach(i => {
+            i.classList.remove('open');
+            const t = i.querySelector('.faq-item__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle current
+          if (!isOpen) {
+            item.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    /* ─── SCHEDULE TABS ─── */
+    (function() {
+      const tabs = document.querySelectorAll('.schedule__tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          // In production: load actual schedule data per day
+        });
+      });
+    })();
+
+    /* ─── FORM SUBMIT ─── */
+    (function() {
+      const btn = document.getElementById('submitBtn');
+      const formContent = document.getElementById('formContent');
+      const formSuccess = document.getElementById('formSuccess');
+
+      if (!btn) return;
+
+      btn.addEventListener('click', () => {
+        const name = document.getElementById('name');
+        const phone = document.getElementById('phone');
+        const goal = document.getElementById('goal');
+
+        // Simple validation
+        if (!name.value.trim() || !phone.value.trim() || !goal.value) {
+          [name, phone, goal].forEach(el => {
+            if (!el.value.trim()) {
+              el.style.borderColor = 'rgba(255, 80, 80, 0.5)';
+              el.addEventListener('input', () => {
+                el.style.borderColor = '';
+              }, { once: true });
+            }
+          });
+          return;
+        }
+
+        btn.textContent = 'Отправляем...';
+        btn.style.opacity = '0.7';
+        btn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() => {
+          formContent.style.display = 'none';
+          formSuccess.style.display = 'block';
+        }, 1000);
+      });
+    })();
+
+    /* ─── SMOOTH PARALLAX on hero ─── */
+    (function() {
+      const hero = document.querySelector('.hero');
+      const mesh = document.querySelector('.hero__mesh');
+      if (!hero || !mesh || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const y = window.scrollY;
+            const factor = y * 0.3;
+            mesh.style.transform = `translateY(${factor}px)`;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    /* ─── NAV ACTIVE LINK on scroll ─── */
+    (function() {
+      const sections = document.querySelectorAll('section[id]');
+      const links = document.querySelectorAll('.nav__links a');
+      if (!sections.length || !links.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            links.forEach(link => link.classList.remove('active'));
+            const active = document.querySelector(`.nav__links a[href="#${entry.target.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      }, { threshold: 0.4 });
+
+      sections.forEach(s => observer.observe(s));
+    })();
+
+    /* ─── PHONE INPUT MASK ─── */
+    (function() {
+      const phone = document.getElementById('phone');
+      if (!phone) return;
+
+      phone.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.startsWith('8')) v = '7' + v.slice(1);
+        if (!v.startsWith('7')) v = '7' + v;
+        v = v.slice(0, 11);
+
+        let formatted = '+7';
+        if (v.length > 1) formatted += ' (' + v.slice(1, 4);
+        if (v.length >= 4) formatted += ') ' + v.slice(4, 7);
+        if (v.length >= 7) formatted += '-' + v.slice(7, 9);
+        if (v.length >= 9) formatted += '-' + v.slice(9, 11);
+
+        e.target.value = formatted;
+      });
+    })();
+
+    /* ─── FAQ RESPONSIVE GRID ─── */
+    (function() {
+      const faqGrid = document.querySelector('.faq-grid');
+      if (!faqGrid) return;
+
+      const updateLayout = () => {
+        if (window.innerWidth < 900) {
+          faqGrid.style.gridTemplateColumns = '1fr';
+          faqGrid.style.gap = '2rem';
+        } else {
+          faqGrid.style.gridTemplateColumns = '1fr 1.5fr';
+          faqGrid.style.gap = '5rem';
+        }
+      };
+
+      updateLayout();
+      window.addEventListener('resize', updateLayout, { passive: true });
+    })();
+
+    /* ─── PRELOADER JS COUNTER ─── */
+    (function() {
+      let count = 0;
+      const counterEl = document.getElementById('preloaderCounter');
+      const interval = setInterval(() => {
+        count += Math.floor(Math.random() * 15) + 5;
+        if (count >= 100) {
+          count = 100;
+          clearInterval(interval);
+        }
+      }, 80);
+    })();
+
+    /* ═══════════════════════════════════════════
+       ADVANTAGES SECTION — PREMIUM ANIMATIONS
+    ═══════════════════════════════════════════ */
+
+    /* ── 1. STAGGERED CARD ENTRANCE ── */
+    (function() {
+      const cards = document.querySelectorAll('#advantages .advantage-card');
+      if (!cards.length) return;
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            // use the card's own index in NodeList for consistent stagger
+            const idx = Array.from(cards).indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add('adv-visible');
+            }, idx * 90);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      cards.forEach(c => obs.observe(c));
+    })();
+
+    /* ── 2. ANIMATED COUNTERS inside cards ── */
+    (function() {
+      const counters = document.querySelectorAll('#advantages .adv-counter');
+      if (!counters.length) return;
+
+      const ease = t => t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t;
+
+      const animate = (el) => {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const dur = 1400;
+        const start = performance.now();
+        el.classList.add('visible');
+        const update = (now) => {
+          const p = Math.min((now - start) / dur, 1);
+          el.textContent = Math.round(ease(p) * target) + suffix;
+          if (p < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      };
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(el => obs.observe(el));
+    })();
+
+    /* ── 3. 3D TILT + SHINE on hover ── */
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('#advantages .advantage-card').forEach(card => {
+        const shine = card.querySelector('.advantage-card__shine');
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const cx = rect.left + rect.width  / 2;
+          const cy = rect.top  + rect.height / 2;
+          const dx = (e.clientX - cx) / (rect.width  / 2);
+          const dy = (e.clientY - cy) / (rect.height / 2);
+          card.style.transform = `perspective(700px) rotateX(${-dy * 7}deg) rotateY(${dx * 7}deg) scale(1.025) translateY(-4px)`;
+          if (shine) {
+            const mx = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1) + '%';
+            const my = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%';
+            card.style.setProperty('--mx', mx);
+            card.style.setProperty('--my', my);
+          }
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    })();
+
+    /* ── 4. SECTION TITLE shimmer trigger ── */
+    (function() {
+      const title = document.querySelector('#advantages .section-title');
+      if (!title) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            title.classList.add('adv-title-visible');
+            obs.unobserve(title);
+          }
+        });
+      }, { threshold: 0.4 });
+      obs.observe(title);
+    })();
+
+  </script>
+
+</body>
+</html>
